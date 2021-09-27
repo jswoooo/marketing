@@ -1,13 +1,22 @@
 package com.grp04.togosvc.marketing;
 
+import com.grp04.togosvc.marketing.kafka.KafkaProcessor;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
+@EnableBinding(KafkaProcessor.class)
+@EnableFeignClients
 public class MarketingApplication {
 
+	public static ApplicationContext applicationContext;
+
 	public static void main(String[] args) {
-		SpringApplication.run(MarketingApplication.class, args);
+		applicationContext = SpringApplication.run(MarketingApplication.class, args);
 	}
 
 }

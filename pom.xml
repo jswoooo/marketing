@@ -13,10 +13,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>marketing</name>
 	<description>marketing service</description>
+
 	<properties>
 		<java.version>1.8</java.version>
+		<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
 		<spring-cloud-stream.version>Germantown.SR1</spring-cloud-stream.version>
 	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -40,6 +43,10 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -48,13 +55,13 @@
 	
 	<dependencyManagement>
 		<dependencies>
-			<!-- <dependency>
+			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
 				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency> -->
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-stream-dependencies</artifactId>
